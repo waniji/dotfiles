@@ -159,6 +159,7 @@ nnoremap k gk
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
 nmap <silent> ,l    :BufExplorer<CR>
+nmap <silent> <C-e> :NERDTreeToggle<CR>
 
 " 検索などで飛んだらそこを真ん中に
 nmap n nzz
