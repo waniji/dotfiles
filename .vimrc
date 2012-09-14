@@ -11,6 +11,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'thinca/vim-quickrun'
 
 filetype plugin indent on
 
