@@ -12,6 +12,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/neocomplcache'
 
 filetype plugin indent on
 
@@ -20,6 +21,53 @@ if neobundle#exists_not_installed_bundles()
   \ string(neobundle#get_not_installed_bundle_names())
 echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
+
+"--------------------------------------------------------------------------------
+"--- neocomlpcache
+
+" 起動時に有効化
+let g:neocomplcache_enable_at_startup = 1
+" 大文字が入力されるまで大文字小文字の区別を無視
+let g:neocomplcache_enable_smart_case = 1
+" _区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" シンタックスをキャッシュする時の最小文字長
+let g:neocomplcache_min_syntax_length = 4
+" ファイルタイプ別の辞書設定
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'perl' : $HOME . '/.vim/dict/perl.dict'
+    \ }
+" スニペットの展開
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+" 前回行われた補完をキャンセル
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+" 補完候補の中からk腰痛する部分を補完
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+" ポップアップを削除
+inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
+" 現在選択している候補を確定
+inoremap <expr><C-y>  neocomplcache#close_popup()
+" 現在選択している候補をキャンセルしポップアップを閉じる
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" 補完候補の切り替えをTABキーにする
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" オムニ補完の設定
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" Enable heavy omni completion.
+"if !exists('g:neocomplcache_omni_patterns')
+"  let g:neocomplcache_omni_patterns = {}
+"endif
+"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 "--------------------------------------------------------------------------------
 "--- 基本
