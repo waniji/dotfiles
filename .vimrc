@@ -14,6 +14,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'vim-scripts/errormarker.vim'
 
 filetype plugin indent on
 
