@@ -13,6 +13,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache-snippets-complete'
 
 filetype plugin indent on
 
@@ -68,6 +69,12 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 "endif
 "let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+" snippetの配置場所
+let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
+" snippetの呼び出し
+imap <C-k> <plug>(neocomplcache_snippets_expand)
+smap <C-k> <plug>(neocomplcache_snippets_expand)
 
 "--------------------------------------------------------------------------------
 "--- 基本
