@@ -15,6 +15,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
 NeoBundle 'vim-scripts/errormarker.vim'
+NeoBundle 'tomasr/molokai'
 
 filetype plugin indent on
 
@@ -113,9 +114,9 @@ set showtabline=2
 " 強調表示
 syntax on
 " 背景文字色
-colorscheme desert
+colorscheme molokai
 " 背景色
-set background=dark
+"set background=dark
 " タイトルを表示
 set title
 " 常にステータスラインを表示
