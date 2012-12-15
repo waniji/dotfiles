@@ -13,7 +13,7 @@ call neobundle#rc(expand('$HOME/.vim/bundle/'))
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'tomasr/molokai'
 
@@ -41,9 +41,6 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
     \ 'perl' : $HOME . '/.vim/dict/perl.dict'
     \ }
-" スニペットの展開
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 " 前回行われた補完をキャンセル
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 " 補完候補の中からk腰痛する部分を補完
@@ -75,8 +72,17 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 " snippetの配置場所
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
 " snippetの呼び出し
-imap <C-k> <plug>(neocomplcache_snippets_expand)
-smap <C-k> <plug>(neocomplcache_snippets_expand)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 "--------------------------------------------------------------------------------
 "--- 基本
