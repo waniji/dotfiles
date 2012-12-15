@@ -138,6 +138,8 @@ set listchars=tab:>.,trail:_,extends:>,precedes:<
 set display=uhex
 " メニュー非表示
 set guioptions-=m
+" エラー時の画面フラッシュをOFF
+set novisualbell
 " 全角スペースをハイライト
 if has("syntax")
     syntax on
