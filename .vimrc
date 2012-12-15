@@ -10,9 +10,17 @@ endif
 
 call neobundle#rc(expand('$HOME/.vim/bundle/'))
 
-NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimproc', { 'build' : {
+    \     'cygwin' : 'make -f make_cygwin.mak',
+    \     'mac'    : 'make -f make_mac.mak',
+    \     'unix'   : 'make -f make_unix.mak',
+    \    },
+    \ }
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'rest.vim'
 NeoBundle 'tomasr/molokai'
@@ -85,6 +93,25 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+"--------------------------------------------------------------------------------
+"--- unite
+
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 全部
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 
 "--------------------------------------------------------------------------------
 "--- Tagbar
@@ -240,7 +267,7 @@ nnoremap k gk
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
 nmap <silent> ,l    :BufExplorer<CR>
-nmap <silent> <C-e> :NERDTreeToggle<CR>
+nmap <silent> <C-e> :VimFilerExplorer<CR>
 nmap <silent> <C-Tab> :tabn<CR>
 nmap <silent> <C-S-Tab> :tabN<CR>
 nmap <silent> <C-o> :TagbarToggle<CR>
