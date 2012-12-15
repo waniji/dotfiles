@@ -18,6 +18,7 @@ NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'rest.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 
@@ -85,6 +86,15 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+"--------------------------------------------------------------------------------
+"--- Tagbar
+
+" ctagsのパス指定
+if has("win32")
+    let g:tagbar_ctags_bin = '$HOME\bin\ctags.exe'
+endif
+
 
 "--------------------------------------------------------------------------------
 "--- 基本
@@ -234,6 +244,7 @@ nmap <silent> ,l    :BufExplorer<CR>
 nmap <silent> <C-e> :NERDTreeToggle<CR>
 nmap <silent> <C-Tab> :tabn<CR>
 nmap <silent> <C-S-Tab> :tabN<CR>
+nmap <silent> <C-o> :TagbarToggle<CR>
 
 " 検索などで飛んだらそこを真ん中に
 nmap n nzz
