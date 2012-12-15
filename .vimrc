@@ -15,6 +15,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'vim-scripts/errormarker.vim'
+NeoBundle 'rest.vim'
 NeoBundle 'tomasr/molokai'
 
 filetype plugin indent on
