@@ -11,7 +11,6 @@ endif
 call neobundle#rc(expand('$HOME/.vim/bundle/'))
 
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'vim-scripts/errormarker.vim'
