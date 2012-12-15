@@ -136,6 +136,8 @@ set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<
 " 印字不可能文字を16進数で表示
 set display=uhex
+" メニュー非表示
+set guioptions-=m
 " 全角スペースをハイライト
 if has("syntax")
     syntax on
