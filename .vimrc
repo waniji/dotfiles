@@ -17,6 +17,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'rest.vim'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 
