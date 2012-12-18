@@ -157,6 +157,8 @@ set showtabline=2
 
 " 強調表示
 syntax on
+" 256色モードで起動
+set t_Co=256
 " 背景文字色
 colorscheme molokai
 " 背景色
