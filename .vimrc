@@ -27,6 +27,7 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
