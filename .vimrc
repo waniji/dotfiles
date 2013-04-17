@@ -23,7 +23,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
     \ }
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'vim-scripts/errormarker.vim'
-NeoBundle 'rest.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
