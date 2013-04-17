@@ -290,7 +290,6 @@ nnoremap Y y$
 " バッファ周り
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
-nmap <silent> ,l    :BufExplorer<CR>
 nmap <silent> <C-e> :VimFilerExplorer<CR>
 nmap <silent> <C-Tab> :tabn<CR>
 nmap <silent> <C-S-Tab> :tabN<CR>
