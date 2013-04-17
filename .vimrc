@@ -30,6 +30,7 @@ NeoBundle 'fakeclip'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'thinca/vim-visualstar'
 
 filetype plugin indent on
 
