@@ -268,6 +268,9 @@ nnoremap k gk
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 nnoremap <Space>, :<C-u>source $MYVIMRC<CR>
 
+" カーソル配下の単語を置換
+nnoremap g/ :<C-u>%s/<C-R><C-w>//gc<Left><Left><Left>
+
 " ハイライトを削除
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 
