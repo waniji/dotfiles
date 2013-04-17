@@ -26,6 +26,7 @@ NeoBundle 'rest.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
+NeoBundle 'tpope/vim-markdown'
 NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
@@ -258,6 +259,12 @@ set hlsearch
 set ffs=unix,dos
 " デフォルトエンコーディング
 set encoding=utf-8
+
+"--------------------------------------------------------------------------------
+"--- ファイル種別
+
+autocmd BufRead,BufNewFile *.md  setlocal filetype=markdown
+autocmd! FileType markdown hi! def link markdownItalic Normal
 
 "--------------------------------------------------------------------------------
 "--- キーバインド関係
