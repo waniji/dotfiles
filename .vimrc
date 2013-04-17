@@ -28,6 +28,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-visualstar'
 
