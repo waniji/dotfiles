@@ -265,6 +265,8 @@ set encoding=utf-8
 " 行単位で移動(1行が長い場合に便利)
 nnoremap j gj
 nnoremap k gk
+nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
+nnoremap <Space>, :<C-u>source $MYVIMRC<CR>
 
 " バッファ周り
 nmap <silent> <C-l> :bnext<CR>
