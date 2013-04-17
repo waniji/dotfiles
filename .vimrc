@@ -25,6 +25,7 @@ NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'rest.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'fakeclip'
 NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
@@ -151,6 +152,8 @@ set browsedir=buffer
 set whichwrap=b,s,h,l,<,>,[,] 
 " タブを常に表示
 set showtabline=2
+" ヤンクした内容をクリップボードにコピー
+set clipboard=unnamed,autoselect
 
 "--------------------------------------------------------------------------------
 "--- 表示
