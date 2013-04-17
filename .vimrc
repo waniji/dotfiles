@@ -268,6 +268,8 @@ nnoremap k gk
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 nnoremap <Space>, :<C-u>source $MYVIMRC<CR>
 
+" ハイライトを削除
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
 " バッファ周り
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
