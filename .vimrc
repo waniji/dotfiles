@@ -15,9 +15,10 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimproc', { 'build' : {
-    \     'cygwin' : 'make -f make_cygwin.mak',
-    \     'mac'    : 'make -f make_mac.mak',
-    \     'unix'   : 'make -f make_unix.mak',
+    \     'windows' : 'make -f make_mingw32.mak',
+    \     'cygwin'  : 'make -f make_cygwin.mak',
+    \     'mac'     : 'make -f make_mac.mak',
+    \     'unix'    : 'make -f make_unix.mak',
     \    },
     \ }
 NeoBundle 'Shougo/vimshell'
