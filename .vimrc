@@ -270,6 +270,10 @@ nnoremap <Space>, :<C-u>source $MYVIMRC<CR>
 
 " ハイライトを削除
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" 行末までコピー
+nnoremap Y y$
+
 " バッファ周り
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
