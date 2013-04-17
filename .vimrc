@@ -23,9 +23,9 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'rest.vim'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
@@ -160,9 +160,7 @@ syntax on
 " 256色モードで起動
 set t_Co=256
 " 背景文字色
-colorscheme molokai
-" 背景色
-"set background=dark
+colorscheme hybrid
 " タイトルを表示
 set title
 " 常にステータスラインを表示
