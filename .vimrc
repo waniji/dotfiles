@@ -13,7 +13,6 @@ call neobundle#rc(expand('$HOME/.vim/bundle/'))
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimproc', { 'build' : {
     \     'windows' : 'make -f make_mingw32.mak',
     \     'cygwin'  : 'make -f make_cygwin.mak',
@@ -28,6 +27,7 @@ NeoBundle 'fakeclip'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'itchyny/lightline.vim'
@@ -288,7 +288,7 @@ nnoremap Y y$
 " バッファ周り
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
-nmap <silent> <C-e> :VimFilerExplorer<CR>
+nmap <silent> <C-e> :NERDTreeToggle<CR>
 nmap <silent> <C-Tab> :tabn<CR>
 nmap <silent> <C-S-Tab> :tabN<CR>
 nmap <silent> <C-o> :TagbarToggle<CR>
