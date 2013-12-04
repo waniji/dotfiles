@@ -28,6 +28,11 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-perl/vim-perl', {
+    \ 'autoload' : {
+    \   'filetypes' : ['perl', 'pl'],
+    \   },
+    \ }
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'itchyny/lightline.vim'

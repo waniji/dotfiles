@@ -10,3 +10,24 @@ snippet if
         ${2}
     }
 
+snippet finout
+prev_word   '^'
+    use Getopt::Long qw(:config posix_default no_ignore_case gnu_compat);
+
+    my $infile;
+    my $outfile;
+
+    GetOptions( 'infile=s', \$infile, 'outfile=s', \$outfile );
+    open (INFILE, "<", $infile) or die "$!";
+    open (OUTFILE, ">", $outfile) or die "$!";
+
+    while( my $line = <INFILE>) {
+
+        chomp($line);
+
+        print OUTFILE "\n";
+    }
+
+    close(INFILE);
+    close(OUTFILE);
+
