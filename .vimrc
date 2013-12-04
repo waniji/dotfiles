@@ -161,8 +161,6 @@ set browsedir=buffer
 set whichwrap=b,s,h,l,<,>,[,] 
 " タブを常に表示
 set showtabline=2
-" ヤンクした内容をクリップボードにコピー
-set clipboard=unnamed,autoselect
 
 "--------------------------------------------------------------------------------
 "--- 表示
@@ -195,6 +193,10 @@ set display=uhex
 set guioptions-=m
 " エラー時の画面フラッシュをOFF
 set novisualbell
+" ヤンクした内容をクリップボードにコピー
+set clipboard+=autoselect
+set clipboard+=unnamed
+
 " 全角スペースをハイライト
 if has("syntax")
     syntax on
