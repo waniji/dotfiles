@@ -23,7 +23,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
     \ }
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'vim-scripts/errormarker.vim'
-NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
 NeoBundle 'tpope/vim-markdown'
@@ -31,6 +30,7 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'itchyny/lightline.vim'
 
 filetype plugin indent on
 
@@ -172,8 +172,6 @@ colorscheme hybrid
 set title
 " 常にステータスラインを表示
 set laststatus=2
-" ステータスラインの書式
-set statusline=%<%F\ %r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v(ASCII=%03.3b,HEX=%02.2B)\ %l/%L(%P)%m
 " コマンドをステータス行に表示
 set showcmd
 " 括弧の対応をハイライト
