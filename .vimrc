@@ -39,6 +39,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'osyo-manga/vim-over'
 
 filetype plugin indent on
 
@@ -134,6 +135,15 @@ if has("win32")
     let g:tagbar_ctags_bin = '$HOME\bin\ctags.exe'
 endif
 
+"--------------------------------------------------------------------------------
+"--- vim-over
+
+" over.vimの起動
+nnoremap <silent> ,s :OverCommandLine<CR>
+" カーソル下の単語をハイライト付きで置換
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+" コピーした文字列をハイライト付きで置換
+nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 
 "--------------------------------------------------------------------------------
 "--- 基本
