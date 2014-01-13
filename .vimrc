@@ -40,6 +40,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
