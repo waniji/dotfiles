@@ -41,6 +41,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'hotchpotch/perldoc-vim'
 
 filetype plugin indent on
 
