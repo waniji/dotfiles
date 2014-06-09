@@ -326,12 +326,16 @@ noremap <Esc><Esc> :nohlsearch<CR><Esc>
 " 行末までコピー
 nnoremap Y y$
 
-" バッファ周り
-nmap <silent> <C-l> :bnext<CR>
-nmap <silent> <C-h> :bprevious<CR>
+" バッファ
+nmap <silent> <S-l> :bnext<CR>
+nmap <silent> <S-h> :bprevious<CR>
+
+" タブ
+nmap <silent> <C-n> :tabe<CR>
+nmap <silent> <C-l> :tabn<CR>
+nmap <silent> <C-h> :tabN<CR>
+
 nmap <silent> <C-e> :NERDTreeToggle<CR>
-nmap <silent> <C-Tab> :tabn<CR>
-nmap <silent> <C-S-Tab> :tabN<CR>
 nmap <silent> <C-o> :TagbarToggle<CR>
 
 " 検索などで飛んだらそこを真ん中に
