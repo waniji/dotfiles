@@ -36,10 +36,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'hotchpotch/perldoc-vim'
 
@@ -338,8 +335,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 nnoremap <Space>, :<C-u>source $MYVIMRC<CR>
-nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
-nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
 " カーソル配下の単語を置換
 nnoremap g/ :<C-u>%s/<C-R><C-w>//gc<Left><Left><Left>
