@@ -1,0 +1,21 @@
+[user]
+	name = Makoto Sasaki
+	email = wanigoya@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	a  = add
+	ap = add -p
+	aa = add .
+	co = checkout
+	b  = branch
+	com = commit --message
+	d  = diff
+	s  = status --branch --short
+	l  = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+	lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+	lm = log --no-merges --date=short --pretty='format:%C(yellow)%h %C(green)%cd %C(blue)%an%C(red)%d %C(reset)%s'
+[interactive]
+	singlekey = true
