@@ -30,6 +30,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " Perl
 NeoBundleLazy 'vim-perl/vim-perl', {
@@ -169,6 +170,15 @@ let g:lightline = {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ },
       \ }
+
+"--------------------------------------------------------------------------------
+"--- vim-indent-guides
+
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=237
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=237
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
 
 "--------------------------------------------------------------------------------
 "--- syntastic
