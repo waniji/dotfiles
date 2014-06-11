@@ -22,7 +22,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
     \ }
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
-NeoBundle 'tpope/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
@@ -320,8 +319,8 @@ set encoding=utf-8
 "--------------------------------------------------------------------------------
 "--- ファイル種別
 
-autocmd BufRead,BufNewFile *.md  setlocal filetype=markdown
 autocmd! FileType markdown hi! def link markdownItalic Normal
+au BufRead,BufNewFile *.md         set filetype=markdown
 au BufNewFile,BufRead *.psgi       set filetype=perl
 au BufNewFile,BufRead *.t          set filetype=perl
 au BufNewFile,BufRead cpanfile     set filetype=perl
