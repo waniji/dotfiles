@@ -197,7 +197,7 @@ let g:indent_guides_guide_size=1
 "--------------------------------------------------------------------------------
 "--- syntastic
 
-"let g:syntastic_enable_perl_checker = 1
+let g:syntastic_enable_perl_checker = 1
 
 "--------------------------------------------------------------------------------
 "--- accelerated-jk
@@ -381,8 +381,6 @@ au BufNewFile,BufRead cpanfile     set filetype=perl
 "--- キーバインド関係
 
 " 行単位で移動(1行が長い場合に便利)
-nnoremap j gj
-nnoremap k gk
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 nnoremap <Space>, :<C-u>source $MYVIMRC<CR>
 
