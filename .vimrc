@@ -44,6 +44,9 @@ NeoBundleLazy 'hotchpotch/perldoc-vim', {
 NeoBundleLazy 'c9s/perlomni.vim', {
     \ 'autoload' : { 'filetypes' : ['perl'], },
     \ }
+NeoBundleLazy 'mattn/perlvalidate-vim', {
+    \ 'autoload' : { 'filetypes' : ['perl'], },
+    \ }
 
 filetype plugin indent on
 
