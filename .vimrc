@@ -30,6 +30,9 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'gcmt/wildfire.vim'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'rhysd/vim-operator-surround'
+NeoBundle 'tpope/vim-repeat'
 
 " 表示
 NeoBundle 'itchyny/lightline.vim'
@@ -223,6 +226,13 @@ let g:quickrun_config = {
 \       "runner/vimproc/updatetime" : 10,
 \   },
 \}
+
+"--------------------------------------------------------------------------------
+"--- vim-operator-surround
+
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
 
 "--------------------------------------------------------------------------------
 "--- 基本
