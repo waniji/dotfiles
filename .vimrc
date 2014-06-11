@@ -27,18 +27,20 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'vim-perl/vim-perl', {
-    \ 'autoload' : {
-    \   'filetypes' : ['perl', 'pl'],
-    \   },
-    \ }
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'hotchpotch/perldoc-vim'
+
+" Perl
+NeoBundleLazy 'vim-perl/vim-perl', {
+    \ 'autoload' : { 'filetypes' : ['perl'], },
+    \ }
+NeoBundleLazy 'hotchpotch/perldoc-vim', {
+    \ 'autoload' : { 'filetypes' : ['perl'], },
+    \ }
 
 filetype plugin indent on
 
