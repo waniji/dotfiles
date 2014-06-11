@@ -215,6 +215,16 @@ let g:ctrlp_clear_cache_on_exit = 0
 nmap <silent> <C-e> :NERDTreeToggle<CR>
 
 "--------------------------------------------------------------------------------
+"--- vim-quickrun
+
+let g:quickrun_config = {
+\   "_" : {
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 10,
+\   },
+\}
+
+"--------------------------------------------------------------------------------
 "--- 基本
 
 " vi互換をOFF
