@@ -247,10 +247,6 @@ if has("syntax")
     function! ActivateInvisibleIndicator()
     syntax match InvisibleJISX0208Space "　" display containedin=ALL
     highlight InvisibleJISX0208Space term=underline ctermbg=Cyan guibg=Cyan
-    "        syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
-    "        highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=Red
-    "        syntax match InvisibleTab "\t" display containedin=ALL
-    "        highlight InvisibleTab term=underline ctermbg=Cyan guibg=Cyan
 endf
     augroup invisible
     autocmd! invisible
