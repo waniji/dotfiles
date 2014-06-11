@@ -323,6 +323,9 @@ set encoding=utf-8
 
 autocmd BufRead,BufNewFile *.md  setlocal filetype=markdown
 autocmd! FileType markdown hi! def link markdownItalic Normal
+au BufNewFile,BufRead *.psgi       set filetype=perl
+au BufNewFile,BufRead *.t          set filetype=perl
+au BufNewFile,BufRead cpanfile     set filetype=perl
 
 "--------------------------------------------------------------------------------
 "--- キーバインド関係
