@@ -11,7 +11,7 @@ endif
 call neobundle#rc(expand('$HOME/.vim/bundle/'))
 
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimproc', { 'build' : {
     \     'windows' : 'make -f make_mingw32.mak',
@@ -71,48 +71,32 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 "--------------------------------------------------------------------------------
-"--- neocomlpcache
+"--- neocomplete
 
 " 起動時に有効化
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
 " 大文字が入力されるまで大文字小文字の区別を無視
-let g:neocomplcache_enable_smart_case = 1
-" _区切りの補完を有効化
-let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplete#enable_smart_case = 1
 " シンタックスをキャッシュする時の最小文字長
-let g:neocomplcache_min_syntax_length = 4
+let g:neocomplete#sources#syntax#min_keyword_length= 3
 " ファイルタイプ別の辞書設定
-let g:neocomplcache_dictionary_filetype_lists = {
+let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'perl' : $HOME . '/.vim/dict/perl.dict'
     \ }
-" 前回行われた補完をキャンセル
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-" 補完候補の中からk腰痛する部分を補完
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-" ポップアップを削除
-inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
-" 現在選択している候補を確定
-inoremap <expr><C-y>  neocomplcache#close_popup()
-" 現在選択している候補をキャンセルしポップアップを閉じる
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " 補完候補の切り替えをTABキーにする
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" オムニ補完の設定
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
 " Enable heavy omni completion.
-"if !exists('g:neocomplcache_omni_patterns')
-"  let g:neocomplcache_omni_patterns = {}
-"endif
-"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
 
 " snippetの配置場所
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
