@@ -29,6 +29,7 @@ NeoBundle 'scrooloose/syntastic'
 " 操作
 NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'gcmt/wildfire.vim'
 
 " 表示
 NeoBundle 'itchyny/lightline.vim'
