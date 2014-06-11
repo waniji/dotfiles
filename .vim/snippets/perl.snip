@@ -31,3 +31,6 @@ prev_word   '^'
     close(INFILE);
     close(OUTFILE);
 
+snippet dumper
+    use Data::Dumper; warn Dumper(${1:code});
+
