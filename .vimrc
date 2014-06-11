@@ -20,7 +20,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
     \     'unix'    : 'make -f make_unix.mak',
     \    },
     \ }
-NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'fakeclip'
 NeoBundle 'tpope/vim-markdown'
