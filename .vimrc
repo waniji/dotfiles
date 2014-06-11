@@ -29,6 +29,7 @@ NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
@@ -184,6 +185,13 @@ let g:indent_guides_guide_size=1
 "--- syntastic
 
 "let g:syntastic_enable_perl_checker = 1
+
+"--------------------------------------------------------------------------------
+"--- accelerated-jk
+
+let g:accelerated_jk_acceleration_table = [10,5,3]
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
 
 "--------------------------------------------------------------------------------
 "--- ctrlp
