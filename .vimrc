@@ -110,8 +110,12 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+"--------------------------------------------------------------------------------
+"--- neosnippet
+
 " snippetの配置場所
-let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
+let s:my_snippet = '~/.vim/snippets'
+let g:neosnippet#snippets_directory = s:my_snippet
 
 " snippetの呼び出し
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
