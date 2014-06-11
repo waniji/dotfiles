@@ -41,6 +41,9 @@ NeoBundleLazy 'vim-perl/vim-perl', {
 NeoBundleLazy 'hotchpotch/perldoc-vim', {
     \ 'autoload' : { 'filetypes' : ['perl'], },
     \ }
+NeoBundleLazy 'c9s/perlomni.vim', {
+    \ 'autoload' : { 'filetypes' : ['perl'], },
+    \ }
 
 filetype plugin indent on
 
@@ -93,15 +96,20 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns['perl'] = '\h\w*->\h\w*\|\h\w*::\w*'
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " snippetの配置場所
 let g:neocomplcache_snippets_dir = $HOME . '/.vim/snippets'
+
 " snippetの呼び出し
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
