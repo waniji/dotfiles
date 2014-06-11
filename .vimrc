@@ -21,7 +21,6 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
     \    },
     \ }
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'fakeclip'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
