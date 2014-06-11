@@ -24,14 +24,20 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'thinca/vim-visualstar'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'itchyny/lightline.vim'
+
+" 操作
 NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'Lokaltog/vim-easymotion'
+
+" 表示
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" 検索
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'thinca/vim-visualstar'
 
 " Perl
 NeoBundleLazy 'vim-perl/vim-perl', {
@@ -152,6 +158,7 @@ if has("win32")
     let g:tagbar_ctags_bin = '$HOME\bin\ctags.exe'
 endif
 
+nmap <silent> <C-o> :TagbarToggle<CR>
 
 "--------------------------------------------------------------------------------
 "--- lightline
@@ -202,6 +209,11 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_clear_cache_on_exit = 0
 
 "--------------------------------------------------------------------------------
+"--- NERDTree
+
+nmap <silent> <C-e> :NERDTreeToggle<CR>
+
+"--------------------------------------------------------------------------------
 "--- 基本
 
 " vi互換をOFF
@@ -228,8 +240,6 @@ set vb t_vb=
 set browsedir=buffer
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,] 
-" タブを常に表示
-set showtabline=2
 
 "--------------------------------------------------------------------------------
 "--- 表示
@@ -265,6 +275,8 @@ set novisualbell
 " ヤンクした内容をクリップボードにコピー
 set clipboard+=autoselect
 set clipboard+=unnamed
+" タブを常に表示
+set showtabline=2
 
 " 全角スペースをハイライト
 if has("syntax")
@@ -368,9 +380,6 @@ nmap <silent> <S-h> :bprevious<CR>
 nmap <silent> <C-n> :tabe<CR>
 nmap <silent> <C-l> :tabn<CR>
 nmap <silent> <C-h> :tabN<CR>
-
-nmap <silent> <C-e> :NERDTreeToggle<CR>
-nmap <silent> <C-o> :TagbarToggle<CR>
 
 " 検索などで飛んだらそこを真ん中に
 nmap n nzz
