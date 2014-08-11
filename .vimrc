@@ -40,7 +40,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " 検索
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'thinca/vim-visualstar'
