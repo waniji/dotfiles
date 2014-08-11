@@ -28,7 +28,6 @@ NeoBundle 'scrooloose/syntastic'
 
 " 操作
 NeoBundle 'rhysd/accelerated-jk'
-NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'rhysd/vim-operator-surround'
@@ -68,28 +67,7 @@ echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
 
 "--------------------------------------------------------------------------------
-"--- vim-easymotion
 
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
-let g:EasyMotion_use_upper = 1
-let g:EasyMotion_enter_jump_first = 1
-let g:EasyMotion_space_jump_first = 1
-
-nmap s <Plug>(easymotion-s2)
-xmap s <Plug>(easymotion-s2)
-omap z <Plug>(easymotion-s2)
-
-map f <Plug>(easymotion-fl)
-map t <Plug>(easymotion-tl)
-map F <Plug>(easymotion-Fl)
-map T <Plug>(easymotion-Tl)
-
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
 
 "--------------------------------------------------------------------------------
 "--- neocomplete
