@@ -1,14 +1,14 @@
 "--------------------------------------------------------------------------------
 "--- NeoBundle
 
-set nocompatible
-filetype off
-
 if has('vim_starting')
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+    set nocompatible
+    set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('$HOME/.vim/bundle/'))
+call neobundle#begin(expand('$HOME/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete'
@@ -58,13 +58,9 @@ NeoBundleLazy 'mattn/perlvalidate-vim', {
     \ 'autoload' : { 'filetypes' : ['perl'], },
     \ }
 
+call neobundle#end()
 filetype plugin indent on
-
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-  \ string(neobundle#get_not_installed_bundle_names())
-echomsg 'Please execute ":NeoBundleInstall" command.'
-endif
+NeoBundleCheck
 
 "--------------------------------------------------------------------------------
 
