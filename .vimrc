@@ -32,6 +32,7 @@ NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'rhysd/vim-operator-surround'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'rhysd/clever-f.vim'
 
 " 表示
 NeoBundle 'itchyny/lightline.vim'
@@ -63,7 +64,11 @@ filetype plugin indent on
 NeoBundleCheck
 
 "--------------------------------------------------------------------------------
+"--- clever-f
 
+let g:clever_f_ignore_case = 1
+let g:clever_f_use_migemo = 1
+let g:clever_f_fix_key_direction = 1
 
 "--------------------------------------------------------------------------------
 "--- neocomplete
