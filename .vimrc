@@ -46,18 +46,11 @@ NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'thinca/vim-visualstar'
 
 " Perl
-NeoBundleLazy 'vim-perl/vim-perl', {
-    \ 'autoload' : { 'filetypes' : ['perl'], },
-    \ }
-NeoBundleLazy 'hotchpotch/perldoc-vim', {
-    \ 'autoload' : { 'filetypes' : ['perl'], },
-    \ }
-NeoBundleLazy 'c9s/perlomni.vim', {
-    \ 'autoload' : { 'filetypes' : ['perl'], },
-    \ }
-NeoBundleLazy 'mattn/perlvalidate-vim', {
-    \ 'autoload' : { 'filetypes' : ['perl'], },
-    \ }
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'c9s/perlomni.vim'
+NeoBundle 'mattn/perlvalidate-vim'
+NeoBundle 'motemen/xslate-vim'
 
 call neobundle#end()
 filetype plugin indent on
