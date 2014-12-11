@@ -201,6 +201,13 @@ map <silent>sd <Plug>(operator-surround-delete)
 map <silent>sr <Plug>(operator-surround-replace)
 
 "--------------------------------------------------------------------------------
+"--- memolist.vim
+
+let g:memolist_memo_suffix = "md"
+let g:memolist_memo_date = "%Y-%m-%d %H:%M"
+let g:memolist_ex_cmd = 'NERDTree'
+
+"--------------------------------------------------------------------------------
 "--- 基本
 
 " vi互換をOFF
