@@ -19,3 +19,5 @@
 	f  = fetch --prune
 [interactive]
 	singlekey = true
+[init]
+	templatedir = ~/.git_template
