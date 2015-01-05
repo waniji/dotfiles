@@ -1,6 +1,6 @@
 export HISTCONTROL="ignoredups"
 peco-history() {
-  local CMD=$(HISTTIMEFORMAT="" history | sort -k 2 -k 1nr | uniq -f 1 | sort -nr | sed 's/^\s\+[0-9]\+\*\?\s\+//' | peco )
+  local CMD=$(HISTTIMEFORMAT="" history | sort -k 2 -k 1nr | uniq -f 1 | sort -nr | perl -pe 's/^\s+[0-9]+\s+//g' | peco )
   if [ -n "$CMD" ] ; then
     history -s $CMD
     echo $CMD >&2
