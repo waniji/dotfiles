@@ -2,8 +2,7 @@
 
 cd $(dirname $0)
 
-git submodule init
-git submodule update
+git clone https://github.com/Shougo/neobundle.vim.git ./.vim/bundle/neobundle.vim
 
 for filename in .?*
 do
