@@ -309,6 +309,9 @@ set shiftwidth=4
 " INSERTでTabを挿入するときに、代わりに適切な数の空白を挿入する
 set expandtab
 
+autocmd! FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 "--------------------------------------------------------------------------------
 "--- 補完・履歴
 
