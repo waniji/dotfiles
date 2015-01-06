@@ -386,3 +386,7 @@ imap <c-j> <c-[>
 
 vmap pt !perltidy<CR>
 
+if has('gui_macvim')
+    map ¥ <Leader>
+endif
+
