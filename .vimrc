@@ -384,3 +384,5 @@ nmap G Gzz
 
 imap <c-j> <c-[>
 
+vmap pt !perltidy<CR>
+
