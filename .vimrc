@@ -51,6 +51,13 @@ NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'mattn/perlvalidate-vim'
 NeoBundle 'motemen/xslate-vim'
 
+" Ruby
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+
+" HTML
+NeoBundle 'othree/html5.vim'
+
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
