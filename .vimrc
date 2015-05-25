@@ -190,6 +190,11 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 nmap <silent> <C-e> :NERDTreeToggle<CR>
 
+" 起動時にNERDTreeを有効化
+autocmd vimenter * NERDTree
+" NERDTreeのみとなった場合にVimを終了する
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 "--------------------------------------------------------------------------------
 "--- vim-quickrun
 
