@@ -49,7 +49,6 @@ NeoBundle 'thinca/vim-visualstar'
 " Perl
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'mattn/perlvalidate-vim'
 NeoBundle 'motemen/xslate-vim'
 
@@ -96,16 +95,11 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-let g:neocomplete#keyword_patterns['perl'] = '\h\w*->\h\w*\|\h\w*::\w*'
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "--------------------------------------------------------------------------------
 "--- neosnippet
