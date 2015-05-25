@@ -4,6 +4,8 @@
 if has('vim_starting')
     set nocompatible
     set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+    set runtimepath+=$GOROOT/misc/vim
+    set runtimepath+=$GOPATH/src/github.com/nsf/gocode/vim
 endif
 
 call neobundle#begin(expand('$HOME/.vim/bundle/'))
@@ -57,6 +59,10 @@ NeoBundle 'tpope/vim-rails'
 
 " HTML
 NeoBundle 'othree/html5.vim'
+
+" Golang
+NeoBundle 'fatih/vim-go'
+NeoBundle 'Blackrush/vim-gocode'
 
 call neobundle#end()
 filetype plugin indent on
