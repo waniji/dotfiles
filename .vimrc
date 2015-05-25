@@ -363,6 +363,7 @@ au BufRead,BufNewFile *.md         set filetype=markdown
 au BufNewFile,BufRead *.psgi       set filetype=perl
 au BufNewFile,BufRead *.t          set filetype=perl
 au BufNewFile,BufRead cpanfile     set filetype=perl
+autocmd Filetype json setl conceallevel=0
 
 "--------------------------------------------------------------------------------
 "--- キーバインド関係
