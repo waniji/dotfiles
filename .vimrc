@@ -27,6 +27,7 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-endwise'
 
 " 操作
 NeoBundle 'gcmt/wildfire.vim'
