@@ -105,8 +105,9 @@ endif
 "--- neosnippet
 
 " snippetの配置場所
-let s:my_snippet = '~/.vim/snippets'
-let g:neosnippet#snippets_directory = s:my_snippet
+let g:neosnippet#snippets_directory = [
+    \'~/.vim/snippets',
+    \]
 
 " snippetの呼び出し
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
