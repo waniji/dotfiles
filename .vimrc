@@ -28,6 +28,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'szw/vim-tags'
 
 " 操作
 NeoBundle 'gcmt/wildfire.vim'
