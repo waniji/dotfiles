@@ -30,6 +30,11 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'szw/vim-tags'
 
+" Git
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'cohama/agit.vim'
+NeoBundle 'idanarye/vim-merginal'
+
 " 操作
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'kana/vim-operator-user'
@@ -413,5 +418,4 @@ nmap G Gzz
 imap <c-j> <c-[>
 
 vmap pt !perltidy<CR>
-
 
