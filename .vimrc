@@ -46,6 +46,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'haya14busa/incsearch.vim'
 
 " Perl
 NeoBundle 'vim-perl/vim-perl'
@@ -220,6 +221,13 @@ map <silent>sr <Plug>(operator-surround-replace)
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 let g:memolist_ex_cmd = 'NERDTree'
+
+"--------------------------------------------------------------------------------
+"--- incsearch.vim
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 "--------------------------------------------------------------------------------
 "--- 基本
