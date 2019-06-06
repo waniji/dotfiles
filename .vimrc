@@ -120,7 +120,7 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 
 " For snippet_complete marker.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+  set conceallevel=0 concealcursor=i
 endif
 
 "--------------------------------------------------------------------------------
@@ -164,6 +164,7 @@ let g:syntastic_enable_perl_checker = 1
 let g:ctrlp_by_filename = 1
 " 終了時にキャッシュをクリアしない
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_by_filename = 0
 
 "--------------------------------------------------------------------------------
 "--- NERDTree
@@ -252,6 +253,7 @@ syntax on
 set t_Co=256
 " 背景文字色
 colorscheme hybrid
+set background=dark
 " タイトルを表示
 set title
 " 常にステータスラインを表示
@@ -267,7 +269,7 @@ set number
 " 不可視文字表示
 set list
 " 不可視文字の表示形式
-set listchars=tab:>.,trail:_,extends:>,precedes:<
+set listchars=tab:\¦\ ,trail:_,extends:>,precedes:<
 " 印字不可能文字を16進数で表示
 set display=uhex
 " メニュー非表示
@@ -279,25 +281,22 @@ set clipboard+=autoselect
 set clipboard+=unnamed
 " タブを常に表示
 set showtabline=2
+" 100 桁以上はハイライトしない
+" 既定値では 3000
+set synmaxcol=200
 
 " 全角スペースをハイライト
-if has("syntax")
-    syntax on
-    function! ActivateInvisibleIndicator()
-    syntax match InvisibleJISX0208Space "　" display containedin=ALL
-    highlight InvisibleJISX0208Space term=underline ctermbg=Cyan guibg=Cyan
-endf
-    augroup invisible
-    autocmd! invisible
-    autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
-    augroup END
-endif
-" カレントウィンドウにのみ罫線を引く
-augroup cch
-autocmd! cch
-autocmd WinLeave * set nocursorline
-autocmd WinEnter,BufRead * set cursorline
-augroup END
+"if has("syntax")
+"    syntax on
+"    function! ActivateInvisibleIndicator()
+"    syntax match InvisibleJISX0208Space "　" display containedin=ALL
+"    highlight InvisibleJISX0208Space term=underline ctermbg=Cyan guibg=Cyan
+"endf
+"    augroup invisible
+"    autocmd! invisible
+"    autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+"    augroup END
+"endif
 
 if exists('&ambiwidth')
     set ambiwidth=double
@@ -320,6 +319,8 @@ set expandtab
 autocmd! FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType yml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "--------------------------------------------------------------------------------
 "--- 補完・履歴
@@ -360,6 +361,7 @@ au BufNewFile,BufRead *.psgi       set filetype=perl
 au BufNewFile,BufRead *.t          set filetype=perl
 au BufNewFile,BufRead cpanfile     set filetype=perl
 autocmd Filetype json setl conceallevel=0
+autocmd Filetype markdown setl conceallevel=0
 
 "--------------------------------------------------------------------------------
 "--- キーバインド関係
@@ -397,5 +399,5 @@ nmap G Gzz
 
 imap <c-j> <c-[>
 
-vmap pt !perltidy<CR>
+let g:terraform_fmt_on_save = 1
 
