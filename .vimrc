@@ -12,26 +12,29 @@ call neobundle#begin(expand('$HOME/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/vimproc', { 'build' : {
-    \     'windows' : 'make -f make_mingw32.mak',
-    \     'cygwin'  : 'make -f make_cygwin.mak',
-    \     'mac'     : 'make -f make_mac.mak',
-    \     'unix'    : 'make -f make_unix.mak',
-    \    },
-    \ }
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'hashivim/vim-terraform'
 
 " Git
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-rhubarb'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'idanarye/vim-merginal'
 
@@ -40,12 +43,11 @@ NeoBundle 'gcmt/wildfire.vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'rhysd/vim-operator-surround'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'rhysd/clever-f.vim'
 
 " 表示
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
 
 " 検索
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -57,7 +59,6 @@ NeoBundle 'haya14busa/incsearch.vim'
 " Perl
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'mattn/perlvalidate-vim'
 NeoBundle 'motemen/xslate-vim'
 
 " Ruby
@@ -69,18 +70,10 @@ NeoBundle 'othree/html5.vim'
 
 " Golang
 NeoBundle 'fatih/vim-go'
-NeoBundle 'Blackrush/vim-gocode'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
-
-"--------------------------------------------------------------------------------
-"--- clever-f
-
-let g:clever_f_ignore_case = 1
-let g:clever_f_use_migemo = 1
-let g:clever_f_fix_key_direction = 1
 
 "--------------------------------------------------------------------------------
 "--- neocomplete
@@ -131,19 +124,6 @@ if has('conceal')
 endif
 
 "--------------------------------------------------------------------------------
-"--- unite
-
-" バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer -vertical -winwidth=10<CR>
-
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-
-"--------------------------------------------------------------------------------
 "--- Tagbar
 
 " ctagsのパス指定
@@ -171,15 +151,6 @@ let g:lightline = {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ },
       \ }
-
-"--------------------------------------------------------------------------------
-"--- vim-indent-guides
-
-let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=237
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=237
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=1
 
 "--------------------------------------------------------------------------------
 "--- syntastic
@@ -234,6 +205,15 @@ let g:memolist_ex_cmd = 'NERDTree'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+
+"--------------------------------------------------------------------------------
+"--- open-browser.vim
+
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
 
 "--------------------------------------------------------------------------------
 "--- 基本
