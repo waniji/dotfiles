@@ -12,3 +12,5 @@ do
     ln -is "$PWD/$filename" "$HOME"
 done
 
+mkdir -pv "$HOME/.config/nvim/"
+ln -is "$PWD/.vimrc" "$HOME/.config/nvim/init.vim"
