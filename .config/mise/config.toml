@@ -1,0 +1,21 @@
+# https://mise.jdx.dev/ 
+[tools]
+node = "24"
+"npm:typescript-language-server" = "latest"
+"npm:typescript" = "latest"
+ruby = "3.4"
+"gem:solargraph" = "latest"
+"gem:solargraph-rails" = "latest"
+awscli = "latest"
+jq = "latest"
+gh = "latest"
+fzf = "latest"
+neovim = "latest"
+ecspresso = "latest"
+terraform-ls = "latest"
+
+[settings]
+#idiomatic_version_file_enable_tools = ["terraform"]
+trusted_config_paths = [
+  '~/ghq/github.com/heyinc',
+]
