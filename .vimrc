@@ -10,12 +10,11 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 "Plug 'mattn/vim-lsp-settings'
 
-Plug 'glidenote/memolist.vim'
-
 " 表示
 Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 
 " Tree explorer(fern)
 Plug 'lambdalisue/fern.vim'
@@ -28,14 +27,10 @@ Plug 'lambdalisue/glyph-palette.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
-" 検索
-Plug 'ctrlpvim/ctrlp.vim'
-
-" 操作
-Plug 'gcmt/wildfire.vim'
-Plug 'tpope/vim-endwise'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'thinca/vim-quickrun'
+" fzf
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Programming
 Plug 'hashivim/vim-terraform'
@@ -45,6 +40,9 @@ Plug 'chr4/nginx.vim'
 Plug 'itkq/fluentd-vim'
 Plug 'elzr/vim-json'
 Plug 'google/vim-jsonnet'
+Plug 'jparise/vim-graphql'
+
+Plug 'glidenote/memolist.vim'
 
 call plug#end()
 
@@ -104,33 +102,6 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
     \  },
     \ }))
 
-"--------------------------------------------------------------------------------
-"--- lightline
-
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ }
-
-"--------------------------------------------------------------------------------
-"--- ctrlp
-
-" ファイル名検索をデフォルトにする
-let g:ctrlp_by_filename = 1
-" 終了時にキャッシュをクリアしない
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_by_filename = 0
 
 "--------------------------------------------------------------------------------
 "--- vim-quickrun
@@ -146,7 +117,7 @@ let g:quickrun_config = {
 "--- etc
 
 " 保存時にterraform fmtを実行する
-let g:terraform_fmt_on_save = 1
+let g:terraform_fmt_on_save = 0
 
 " ダブルクォートを表示する
 let g:vim_json_syntax_conceal = 0
@@ -167,7 +138,7 @@ set hidden
 " ビープをならさない
 set vb t_vb=
 " Exploreの初期ディレクトリ
-set browsedir=buffer
+" set browsedir=buffer
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,] 
 
@@ -231,6 +202,8 @@ autocmd! FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType yml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "--------------------------------------------------------------------------------
 "--- 補完・履歴
@@ -303,3 +276,31 @@ nmap g# g#zz
 nmap G Gzz
 " exit insert mode
 imap <c-j> <c-[>
+
+" Find files using Telescope command-line sugar.
+nnoremap <D-p> <cmd>Telescope find_files<cr>
+nnoremap <D-F> <cmd>Telescope live_grep<cr>
+nnoremap fb <cmd>Telescope buffers<cr>
+nnoremap fh <cmd>Telescope help_tags<cr>
+
+lua << END
+require('lualine').setup()
+
+local actions = require("telescope.actions")
+require('telescope').setup({
+    defaults = {
+        file_ignore_patterns = { '^node_modules/', },
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+            },
+        },
+    }
+})
+require("ibl").setup()
+END
+
+let g:memolist_path = "~/.memolist/01_zatsu"
+let g:memolist_memo_suffix = "md"
+let g:memolist_template_dir_path = "~/.memolist/99_template"
+nnoremap <Space>m :MemoNew<CR>

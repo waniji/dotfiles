@@ -1,23 +1,63 @@
 [user]
-	name = Makoto Sasaki
+  name = Makoto Sasaki
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjcI3Q1+/OktYlN3Ab2wafl9TxYNgMvzEYFVUwB+Toa
 [core]
-	editor = vim
+  editor = nvim
+  quotepath = false
+	excludesfile = /Users/msasaki/.gitignore
 [color]
-	ui = true
+  ui = true
 [alias]
-	a  = add
-	ap = add -p
-	aa = add .
-	co = checkout
-	b  = branch
-	com = commit --message
-	d  = diff
-	s  = status --branch --short
-	l  = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
-	lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
-	lm = log --no-merges --date=short --pretty='format:%C(yellow)%h %C(green)%cd %C(blue)%an%C(red)%d %C(reset)%s'
-	f  = fetch --prune
+  a  = add
+  aa = add .
+  ap = add -p .
+  co = checkout
+  b  = branch
+  c  = commit
+  cm = commit --message
+  d  = diff
+  s  = status --branch --short
+  l  = log --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+  lv = log --name-status --abbrev-commit --date=iso --graph --pretty=format:'%C(red)%h %C(yellow)%d%C(green)%cd %C(blue)%cn\n%C(reset)%s\n'
+  lm = log --no-merges --date=short --pretty='format:%C(yellow)%h %C(green)%cd %C(blue)%an%C(red)%d %C(reset)%s'
+  f  = fetch
+  m  = merge
+  sw = switch
+  bran = "!f() { git branch -m waniji-$(date +%Y%m%d)-$(LC_ALL=C tr -dc 'a-z0-9' < /dev/urandom | head -c 6); }; f"
 [interactive]
-	singlekey = true
+  singlekey = true
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
+  defaultBranch = main
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
+	verbose = true
+# https://blog.gitbutler.com/how-git-core-devs-configure-git
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+	autocorrect = prompt
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
