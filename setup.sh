@@ -22,7 +22,6 @@ link_file() {
 find . \
   -type f \
   ! -path "./.git/*" \
-  ! -name ".gitignore" \
   ! -name ".gitmodules" \
   ! -name "setup.sh" \
   | while IFS= read -r file
